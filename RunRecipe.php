@@ -20,25 +20,24 @@ if (isset($_POST['submit']))
 			/* read uploaded files */
             $Ingredient = $_FILES['Ingredient'];
             $recipe 	= $_FILES['recipe'];
-            $cookingDate = date('Y-m-d');	
-			$recipes = RecipesProvider::initFromJson($recipe);
+            $cookingDate = date('Y-m-d'); // I need to verify date format : Pending
+			/* decode uploade file content and hold them into an object for further processing */		$recipes = RecipesProvider::initFromJson($recipe);
             $products = ProductsProvider::initFromCSV($Ingredient);
+			/*Find most nearest match for given recipe */
             $recipeName = $products->findClosetAvailableRecipe($recipes, $cookingDate);			
         }
         catch (ValIng $e) 
 		{
-
             $recipeName =  $e->getMessage() . "\n";
         }
         catch (ValRec $e) 
 		{
-
             $recipeName =  $e->getMessage() . "\n";
             
         } catch (InpRecFind $e) 
 		{            
 			 $recipeName =  $e->getMessage() . "\n";          
 		}
-}
+	}
 }
 include('view/form.php');
