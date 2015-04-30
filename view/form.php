@@ -5,10 +5,10 @@
 		<div class="col-md-4 col-md-offset-4">
 			<h1 class="text-center">Find a Recipe</h1>
 			<form enctype='multipart/form-data' action="" method="POST">
-				<label for="ingredients">upload your ingredients csv file here:</label>
+				<label for="ingredients">Upload  ingredients [ csv file ] here:</label>
                                 <input required type='file' name='Ingredient'>
                                 <br>
-				<label for="ingredients">Upload your recipe json file here:</label>
+				<label for="ingredients">Upload  recipe [ json file ]  here:</label>
                                 <input required type='file' name='recipe'>
                                 <br>
 				<div class="btn-group">
