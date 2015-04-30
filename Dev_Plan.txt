@@ -1,0 +1,5 @@
+1: Create View to hold web interface - header / footer / form / results
+2: Generic library to hold CSS / Fonts / JS
+3: Entire business logic files
+4: Test directory - unit test ( if time permits )
+
