@@ -25,8 +25,8 @@ class ProductsProvider
                 $obj->item = $data[0];
                 $obj->amount = (int)$data[1];
                 $obj->unit = $data[2];
-                $obj->useBy = date('Y-m-d'.  strtotime($data[3]));
-//              $obj->useBy = DateTime::createFromFormat('d/m/Y', $data[3])->format('Y-m-d');
+  //              $obj->useBy = date('Y-m-d'.  strtotime($data[3]));
+				$obj->useBy = DateTime::createFromFormat('d/m/Y', $data[3])->format('Y-m-d');
                 $p = Product::initFromStdClass($obj);
                 $provider->productsArray[] = $p;
 				}
@@ -86,8 +86,11 @@ class ProductsProvider
 		{
             // Check one ingredient in all products.
             $foundInfo = $this->isIngredientAvailable($ingredient, $cookingDate);
-            if(!$foundInfo) return null; // not found one return null, else continue for other ingredients.
+			if(!$foundInfo) return null; // not found one return null, else continue for other ingredients.
             $useByInfo[] = $foundInfo;
+			/*if(!empty($foundInfo)){
+            $useByInfo[] = $foundInfo;   // found one add in info, else continue for other ingredients.
+            } */           
         }
         // All ingredients checked, all found
         sort($useByInfo);
