@@ -9,7 +9,7 @@
  */
 class Product extends Ingredient
 {
-    protected $useBy;
+    public $useBy;
 
     public static function initFromStdClass($std)
     {
@@ -18,6 +18,8 @@ class Product extends Ingredient
         $instance->amount	 	= $std->amount; 
         $instance->unit		 	= $std->unit;
         $instance->useBy 		= $std->useBy; 
+	//	echo "<br>";
+	//	var_dump($instance);
         return $instance;
     }
 

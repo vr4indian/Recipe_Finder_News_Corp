@@ -28,5 +28,35 @@
         "unit": "grams"
       }
     ]
+  },
+  {
+    "name": "salad sandwich second",
+    "ingredients": [
+      {
+        "item": "bread",
+        "amount": "11",
+        "unit": "slices"
+      },
+      {
+        "item": "mixed salad",
+        "amount": "200",
+        "unit": "grams"
+      }
+    ]
+  },
+  {
+    "name": "salad sandwich third",
+    "ingredients": [
+      {
+        "item": "bread",
+        "amount": "3",
+        "unit": "slices"
+      },
+      {
+        "item": "mixed salad",
+        "amount": "20",
+        "unit": "grams"
+      }
+    ]
   }
 ]
